@@ -1,0 +1,16 @@
+body{
+  box-sizing: border-box;
+  margin: 0;
+}
+
+header{
+  height: 50px;
+  background-color: black;
+  display: inline;
+}
+
+header ul li{
+  border: 1px solid black;
+  display: inline;
+  float: right;
+}
