@@ -1,11 +1,37 @@
 
+@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap'");
+
+*{
+    font-family: 'Poppins',sans-serif;
+}
+
 section{
-  height: 800px;
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  /* grid-template-rows:  */
+  /* height: 800px; */
+  display: flex;
+  direction: column;
+  justify-content: space-between;
+
 }
 
 #personal_information{
+  flex-basis: 33%;
   background-color: gray;
+
+}
+
+#res_body{
+  background-color: rgb(255,255,220);
+  flex-basis: 67%;
+}
+
+#skills_list{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-wrap: wrap;
+}
+
+.body_item{
+  /* margin-left: 5%;
+  margin-right: 5%; */
+  margin: 5% 2% 5% 2%;
 }
