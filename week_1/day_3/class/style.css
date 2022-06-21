@@ -1,0 +1,31 @@
+div {
+    text-align: center;
+    color: white;
+    font-size: 4em;
+}
+
+.sectionflexbox {
+    border: 3px solid red;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.f_box{
+  background-color: #00bcff7a;
+  margin: 3px;
+}
+
+.one, .three{
+  align-self: stretch;
+  flex-basis: 50px;
+  height: 100px;
+}
+
+.two{
+  flex-basis: 150px;
+  width: 75%;
+}

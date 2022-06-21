@@ -14,3 +14,26 @@ header ul li{
   display: inline;
   float: right;
 }
+
+#icon{
+  float: left;
+}
+
+ .p_item{
+   width: 20%;
+   display: inline;
+   padding: 1%;
+   margin: 1%;
+   border: 1px red solid;
+ }
+
+.p_item img{
+  width: 20%;
+}
+
+.item_body{
+  /* display: inline; */
+}
+ .item_body *{
+   margin: 0;
+ }
