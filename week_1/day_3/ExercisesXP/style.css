@@ -5,12 +5,16 @@
     font-family: 'Poppins',sans-serif;
 }
 
+body{
+  background-color: #00b4ff4f;
+}
+
 section{
   /* height: 800px; */
   display: flex;
   direction: column;
   justify-content: space-between;
-
+  margin: 10%;
 }
 
 #personal_information{
@@ -20,7 +24,7 @@ section{
 }
 
 #res_body{
-  background-color: rgb(255,255,220);
+  background-color: rgb(240,240,240);
   flex-basis: 67%;
 }
 
@@ -34,4 +38,22 @@ section{
   /* margin-left: 5%;
   margin-right: 5%; */
   margin: 5% 2% 5% 2%;
+}
+
+#profile_pic{
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-top: 20vh;
+  width: 50%;
+  border-radius: 100%;
+}
+
+.pi_item{
+  text-align: center;
+  margin: 5% 2% 5% 2%;
+}
+
+#personal_information hr{
+  margin-left: 15%;
+  margin-right: 15%;
 }
