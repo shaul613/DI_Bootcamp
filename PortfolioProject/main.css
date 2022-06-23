@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+html,h1,h2,h3,h4,h5,h6,a{
+    font-family: "Raleway";
+}
+
+/* header{
+  height: 50vh;
+}
+#headerback{
+  height: 100%;
+  position: absolute;
+} */
+header{
+  height: 100vh;
+  background-image: url(headerback.jpg);
+  background-attachment:fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+#header_text{
+  position: absolute;
+  top: 50%;
+  left: 15%;
+  right: 35%;
+}
