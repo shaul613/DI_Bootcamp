@@ -14,6 +14,20 @@ for (let i in arr){
   sum = sum + arr[i];
 }
 console.log(sum);
+//-------------------------------------------------------
+//Exercise 3 -----------------------------------------
+// Ask the user to give you a sentence containing the word “Nemo”. For example "I love the movie named Nemo"
+let inputNemo = prompt("Enter a sentence with the word 'Nemo':").toLowerCase();
+// Find the word “Nemo”
+let arrNemo = inputNemo.split(" ");
+let indexNemo = arrNemo.indexOf('nemo');
+// Console.log a string as follows: "I found Nemo at [the position of the word Nemo]".
+// If you can’t find Nemo, console.log “I can’t find Nemo”.
+if(indexNemo != -1){
+  console.log(`I found the word Nemo at index ${indexNemo+1}`);
+}else{
+  console.log("I could not find the word 'Nemo' in the sentence");
+}
     </script>
   </body>
 </html>
