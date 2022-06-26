@@ -25,7 +25,9 @@ let wordBad = sentenceArr.indexOf("bad");
 let badAfterNot = wordBad > wordNot;
 let result;
 if(badAfterNot){
-  result = sentence.replace("not",'').replace("bad","good").replace("  "," ");
+  result = sentence.replace("not","").replace("bad","good").replace("  "," ");
+  //Note: i'm sure there's a better way to do this, but I couldn't find another way. When I use replace,
+  //even with no chars or spaces, I get an extra whitespace.
 } else{
   result = sentence;
 }
