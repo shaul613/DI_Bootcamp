@@ -6,10 +6,13 @@
   </head>
   <body>
     <script type="text/javascript">
-      let pets = ['cat', 'dog'];
-      let input = prompt("enter a pet");
-      pets.push(input);
+      let pets = ['cat','dog','fish','rabbit','cow'];
+      console.log(pets[1]);
+      pets.push("horse");
+      pets.splice(3,1);
+      console.log(pets.length);
       console.log(pets);
+
     </script>
   </body>
 </html>
