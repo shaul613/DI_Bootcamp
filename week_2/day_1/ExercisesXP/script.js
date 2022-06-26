@@ -40,8 +40,157 @@ let temperature = 100;
 // Hint: To convert a temperature from celsius to fahrenheit : Divide it by 5, then multiply it by 9, then add 32
 let celsiusToFahrenheit = temperature * 9 / 5 + 32;
 console.log(`${temperature} C is ${celsiusToFahrenheit} F.`);
+
 //Exercise 4
+// For each expression, predict what you think the output will be in a comment (//) without first running
+// the command.
+// Of course, explain each prediction.
+// Then run the expression in the console. Note the actual output in a comment and compare it with
+// your prediction.
+// Using the code below:
+//
+    let c;
+    let a = 34;
+    let b = 21;
+//
+    console.log(a+b);
+//     // Prediction: 55. because a and b are numbers, and 34+21=55.
+//     // Actual: 55.
+//
+    a = 2;
+//
+    console.log(a+b);
+//     // Prediction: 23. Because the value of a changed.
+//     // Actual: 23.
+// What will be the outcome of a + b in the first expression ? 55. because a and b are numbers, and 34+21=55.
+// What will be the outcome of a + b in the second expression ? 23. Because the value of a changed.
+// What is the value of c? Undefined. Because it was not assigned a value.
+//
+// Analyse the code below, what will be the outcome?
+// console.log(3 + 4 + '5'); 75. Becasue 3+4=7, and 5 is a string, displaying 7 and 5 near each other.
+
 
 //Exercise 5
 
+console.log(typeof(15));
+// Prediction:number
+// Actual:number
+
+console.log(typeof(5.5));
+// Prediction:number
+// Actual:number
+
+console.log(typeof(NaN));
+// Prediction:number
+// Actual:number
+
+console.log(typeof("hello"));
+// Prediction:string
+// Actual:string
+
+console.log(typeof(true));
+// Prediction: boolean
+// Actual:boolean
+
+console.log(typeof(1 != 2));
+// Prediction:boolean
+// Actual:boolean
+
+console.log("hamburger" + "s");
+// Prediction:hamburgers
+// Actual:hamburgers
+
+console.log("hamburgers" - "s");
+// Prediction:null
+// Actual:Nan
+
+console.log("1" + "3");
+// Prediction:13
+// Actual:13
+
+console.log("1" - "3");
+// Prediction:Nan
+// Actual:-2
+
+console.log("johnny" + 5);
+// Prediction:johnny5
+// Actual:johnny5
+
+console.log("johnny" - 5);
+// Prediction: Nan
+// Actual:Nan
+
+console.log(99 * "hello");
+// Prediction:hellohellohello etc...
+// Actual:Nan
+
+console.log(1 != 1);
+// Prediction:false
+// Actual:false
+
+console.log(1 == "1");
+// Prediction:true
+// Actual:true
+
+console.log(1 === "1");
+// Prediction:false
+// Actual:false
+
+
 //Exercise 6
+
+console.log(5 + "34");
+// Prediction:534
+// Actual:534
+
+console.log(5 - "4");
+// Prediction:Nan
+// Actual:1
+
+console.log(10 % 5);
+// Prediction:0
+// Actual:0
+
+console.log(5 % 10);
+// Prediction:5
+// Actual:5
+
+console.log("Java" + "Script");
+// Prediction:JavaScript
+// Actual:JavaScripot
+
+console.log(" " + " ");
+// Prediction:
+// Actual:
+
+console.log(" " + 0);
+// Prediction: 0
+// Actual: 0
+
+console.log(true + true);
+// Prediction:true
+// Actual:2
+
+console.log(true + false);
+// Prediction:1
+// Actual:1
+
+console.log(false + true);
+// Prediction:1
+// Actual:1
+
+console.log(false - true);
+// Prediction:-1
+// Actual:-1
+
+console.log(!true);
+// Prediction:false
+// Actual:fasle
+
+console.log(3 - 4);
+// Prediction:-1
+// Actual:-1
+
+console.log("Bob" - "bill");
+// Prediction:Nan
+// Actual:Nan
