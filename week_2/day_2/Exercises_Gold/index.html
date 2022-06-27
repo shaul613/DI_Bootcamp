@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+<script type="text/javascript">
+//Exercise 1
+//----------------------------------------------------
+let userLanguage = prompt("What language do you speak?");
+
+switch(userLanguage.toLowerCase()){
+  case "english":
+    alert("Hello");
+    break;
+  case "french":
+    alert("Bonjour");
+    break;
+  case "hebrew":
+    alert("Shalom");
+    break;
+  case "spanish":
+    alert("Buenos Dias");
+    break;
+  default:
+    alert("01110011 01101111 01110010 01110010 01111001");
+    break;
+}
+//----------------------------------------------------------
+
+//Exercise 2
+//---------------------------------------------------------
+// Ask the user for their grade.
+let grade = prompt("What is your grade?");
+// If the grade is bigger than 90, console.log “A”
+// If the grade is between 80 and 90 (included), console.log “B”
+// If the grade is between 70(included) and 80 (included), console.log “C”
+// If the grade is lower than 70, console.log “D”
+if(grade > 90){
+  console.log("A");
+} else if(grade > 80){
+  console.log("B");
+} else if(grade >= 70){
+  console.log("C");
+} else{
+  console.log("D");
+}
+//---------------------------------------------------------------
+
+//Exercise 3
+//----------------------------------------------------------------
+// Prompt the user for a string. It must be a verb.
+let verb = prompt("Enter a string. It must be a verb!")
+let verbLength = verb.split(" ").length;
+// If the length of the string is at least 3 and the string doesn’t end with “ing”, add ‘ing’ to
+// the end of the string.
+// If the length of the string is at least 3 and the string ends with “ing” add “ly” to it’s end.
+// If the length of the string is less than 3, leave it unchanged.
+
+</script>
+  </body>
+</html>
