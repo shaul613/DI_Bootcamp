@@ -34,7 +34,29 @@ let lengthIsFive = zipInput.length == 5;
 //Only numbers
 let isOnlyNumbers = !isNaN(zipInput);
 //No whitespaces
+let isNoWhitespaces = zipInput.indexOf(" ") == -1;
+if(lengthIsFive && isOnlyNumbers && isNoWhitespaces){
+  console.log("Success");
+} else{
+  console.log("Error");
+  // switch(){
+  //   case lengthIsFive:
+  //     console.log("Length must be 5");
+  //   case isOnlyNumbers:
+  //     console.log("Must only contain digits");
+  //   case isNoWhitespaces:
+  //     console.log("Must not contain whitespaces");
+  // }
+}
+//------------------------------------------------------
 
+//Exercise 3
+//-------------------------------------------
+// Prompt the user for a word and save it to a variable.
+// Delete all the vowels of the word and console.log the result.
+// Bonus: Replace the vowels with another character and console.log the result
+let word = prompt("Enter a word!");
+console.log(word.replace(/[aeiou]/gi, "-"));
 </script>
   </body>
 </html>
