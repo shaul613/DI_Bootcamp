@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+<script type="text/javascript">
+  let userCartLog = {
+  	username : "Johnny",
+  	password: 12345,
+  	isUserSignedIn : true,
+  };
+  // PART I
+  // 1. If the user is SignedIn - show him his name and password
+  // 2. If not - alert the user "you need to sign in"
+if(userCartLog.isUserSignedIn){
+  console.log(`Name: ${userCartLog.username}. Password: ${userCartLog.password}`);
+} else{
+  alert("You need to sign in 1")
+}
+  // PART II
+  // 2nd exercise
+  // 1. If the user is Johnny AND his password is 12345 - alert him "You are signed in"
+  // 2. If the user is Johnny OR his password is 1234 - alert him "One credential is false"
+  // 3. Else,alert the user "you need to sign in
+if(userCartLog.username == 'Johnny' && userCartLog.password == 12345){
+  alert("You are signed in 2");
+} /*else*/ if(userCartLog.username == 'Johnny' || userCartLog.password == 1234){
+  alert("One credential is false");
+} else{
+  alert("You need to sign in 3");
+}
+</script>
+  </body>
+</html>
