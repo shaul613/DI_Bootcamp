@@ -160,7 +160,7 @@ let names = ["Jack", "Philip", "Sarah", "Amanda", "Bernard", "Kyle"];
 let secretName = String(names.map(item => item[0]).sort()).replace(/,/g, "");
 /*
   Explanation: I use the map method to map the first char in each word tonew array, sorted,
-  and converted to string, and I use the replace method to remove commas.
+  and converted to string, and I use the replace method to remove all commas.
 */
 console.log(secretName);
 </script>
