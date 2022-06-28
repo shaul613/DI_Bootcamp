@@ -129,9 +129,38 @@ let family = {
 };
 // Using a for in loop, console.log the keys of the object.
 for(i in family){
-  console.log(family.keys());
+  console.log(i);
 }
 // Using a for in loop, console.log the values of the object.
+for(i in family){
+  console.log(family[i]);
+}
+//----------------------------------
+
+//Exercise 6
+//-----------------------------------
+let details = {
+  my: 'name',
+  is: 'Rudolf',
+  the: 'raindeer'
+}
+// Given the object above and using a for loop, console.log “my name is Rudolf the raindeer”
+for(i in details){
+  console.log(i + " " + details[i]);
+}
+//----------------------------------
+
+//Exercise 7
+//--------------------------------------
+let names = ["Jack", "Philip", "Sarah", "Amanda", "Bernard", "Kyle"];
+// A group of friends have decided to start a secret society. The society’s name will
+// be the first letter of each of their names sorted in alphabetical order.
+// Hint: a string is an array of letters
+// Console.log the name of their secret society. The output should be “ABJKPS”
+let secretName = names.map();
+// for(i in names){
+//
+// }
 </script>
   </body>
 </html>
