@@ -31,11 +31,107 @@ the item in () does not exist.`);
   // Create a variable called last which value is the last element of the array.
   // Hint: What is the relationship between the index of the last element in the array and the
   //  length of the array?
+let last = people[people.length-1];
   // Part II - Loops
   // Using a loop, iterate through the people array and console.log each person.
+for(i in people){
+  console.log(people[i]);
+}
   // Using a loop, iterate through the people array and exit the loop after you console.log “Jason” .
   // Hint: take a look at the break statement in the lesson.
+for(i in people.slice(0, people.indexOf("Jason")+1)){
+  console.log(people[i]);
+}
 
+//Another method:
+for(i in people){
+  console.log(people[i]);
+  if(people[i] == "Jason"){
+    break;
+  }
+}
+//--------------------------------------------
+
+//Exercise 2
+//--------------------------------------------
+// Create an array called colors where the value is a list of your five favorite colors.
+let colors = "red blue yellow green orange".split(" ");
+// Loop through the array and as you loop console.log a string like so: “My #1 choice is blue”,
+// “My #2 choice is red” ect… .
+for(i in colors){
+  console.log(`My #${Number(i)+1} choice is ${colors[i]}.`);
+}
+// Bonus: Change it to console.log “My 1st choice”, “My 2nd choice”, “My 3rd choice”, picking
+// the correct suffix for each number.
+// Hint : create an array of suffixes to do the Bonus
+for(i in colors){
+  let suffixes = "st nd rd th th".split(" ");
+  console.log(`My ${Number(i)+1}${suffixes[i]} choice is ${colors[i]}.`);
+}
+//----------------------------------------
+
+//Exercise 3
+//--------------------------------------------
+// Prompt the user for a number.
+// Hint : Check the data type you receive from the prompt (ie. Use the typeof method)
+// While the number is smaller than 10 continue asking the user for a new number.
+// Tip : Which while loop is more relevant for this situation?
+do{
+  var numberInput = prompt("Enter a number!");
+} while(numberInput < 10);
+//---------------------------------------------
+
+//Exercise 4
+//-----------------------------------------
+let building = {
+    numberOfFloors : 4,
+    numberOfAptByFloor : {
+        firstFloor : 3,
+        secondFloor : 4,
+        thirdFloor : 9,
+        fourthFloor : 2,
+    },
+    nameOfTenants : ["Sarah", "Dan", "David"],
+    numberOfRoomsAndRent:  {
+        sarah: [3, 990],
+        dan :  [4, 1000],
+        david : [1, 500],
+    },
+}
+// Console.log the number of floors in the building.
+console.log("Number of floors: " + building.numberOfFloors);
+// Console.log how many apartments are on the floors 1 and 3.
+console.log(`First floor: ${building.numberOfAptByFloor.firstFloor}.
+Third floor: ${building.numberOfAptByFloor.thirdFloor}.`);
+// Console.log the name of the second tenant and the number of rooms he has in his apartment.
+let secondTenant = building.nameOfTenants[1];
+console.log(`Second tenant: ${secondTenant}
+Number of rooms: ${building.numberOfRoomsAndRent[secondTenant.toLowerCase()][0]}`);
+/*
+  Explanation: I stored the secod tenant in a variable so I can search for number of rooms for second
+  tenant without rewriting the whole object tree.
+*/
+// Check if the sum of Sarah’s and David’s rent is bigger than Dan’s rent. If it is, than
+// increase Dan’s rent to 1200.
+let biggerThanDans = building.numberOfRoomsAndRent.sarah[1] + building.numberOfRoomsAndRent.david[1] > building.numberOfRoomsAndRent.dan[1];
+if(biggerThanDans){
+  building.numberOfRoomsAndRent.dan[1] = 1200;
+}
+//-------------------------------------------------
+
+//Exercise 5
+//----------------------------------------------
+// Create an object called family with a few key value pairs.
+let family = {
+  mom: "Emma",
+  dad: "Bernard",
+  child: "Grace"
+};
+// Using a for in loop, console.log the keys of the object.
+for(i in family){
+  console.log(family.keys());
+}
+// Using a for in loop, console.log the values of the object.
 </script>
   </body>
 </html>
