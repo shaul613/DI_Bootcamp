@@ -157,7 +157,11 @@ let names = ["Jack", "Philip", "Sarah", "Amanda", "Bernard", "Kyle"];
 // be the first letter of each of their names sorted in alphabetical order.
 // Hint: a string is an array of letters
 // Console.log the name of their secret society. The output should be “ABJKPS”
-let secretName = String(names.map(item => item[0]).sort());
+let secretName = String(names.map(item => item[0]).sort()).replace(/,/g, "");
+/*
+  Explanation: I use the map method to map the first char in each word tonew array, sorted,
+  and converted to string, and I use the replace method to remove commas.
+*/
 console.log(secretName);
 </script>
   </body>
