@@ -157,10 +157,8 @@ let names = ["Jack", "Philip", "Sarah", "Amanda", "Bernard", "Kyle"];
 // be the first letter of each of their names sorted in alphabetical order.
 // Hint: a string is an array of letters
 // Console.log the name of their secret society. The output should be “ABJKPS”
-let secretName = names.map();
-// for(i in names){
-//
-// }
+let secretName = String(names.map(item => item[0]).sort());
+console.log(secretName);
 </script>
   </body>
 </html>
