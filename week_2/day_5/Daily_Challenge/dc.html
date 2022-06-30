@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+<script type="text/javascript">
+let bottles;
+do{
+  bottles = Number(prompt("How many bottles?"));
+} while(isNaN(bottles) || bottles < 1);
+let song = "";
+for(i=1; bottles > 0; i++){
+  if(i > bottles){
+    i = bottles;
+  }
+  let itThem = "them";
+  if(i == 1){
+    itThem = "it"
+  }
+  let numBottles = "bottles";
+  if(bottles == 1){
+    numBottles = "bottle";
+  }
+  song += `${bottles} ${numBottles} of beer on the wall\n${bottles} ${numBottles} of beer\nTake ${i} down, pass ${itThem} around\n`;
+  bottles -= i;
+  if(bottles == 1){
+    numBottles = "bottle";
+  }
+  song += `${bottles} ${numBottles} of beer on the wall\n---------\n`;
+}
+
+console.log(song);
+</script>
+  </body>
+</html>
