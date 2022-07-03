@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div>Users:</div>
+    <ul>
+        <li>John</li>
+        <li>Pete</li>
+    </ul>
+<script type="text/javascript">
+// Add a “light blue” background color and some padding to the <div>.
+document.getElementsByTagName("div")[0].setAttribute("style", "background-color: #00d4ff; padding: 5px");
+// Do not display the <li> that contains the text node “John”.
+document.getElementsByTagName("li")[0].remove();
+// Add a border to the <li> that contains the text node “Pete”.
+document.getElementsByTagName("li")[0].setAttribute("style", "border: solid black 1px");
+// Change the font size of the whole body.
+document.body.setAttribute("style", "font-size: 2em");
+// Bonus: If the background color of the div is “light blue”, alert “Hello x and y”
+// (x and y are the users in the div).
+
+</script>
+  </body>
+</html>
