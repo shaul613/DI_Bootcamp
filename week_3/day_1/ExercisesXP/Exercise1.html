@@ -20,13 +20,23 @@
 // Retrieve the div and console.log it
 console.log(document.getElementsByTagName("div"));
 // Change the name “Pete” to “Richard”.
-window.onload = function(){
-  document.querySelector("#pete").innerHTML = "Richard";
+let liItems = document.querySelectorAll("li");
+for(i=0; i<liItems.length; i++){
+  if(liItems[i].innerHTML == "Pete"){
+    liItems[i].innerHTML = "Richard";
+  }
 }
 // Change each first name of the two <ul>'s to your name.
-
+let changeFirstName = document.querySelectorAll(".list");
+for(i=0; i<changeFirstName.length; i++){
+  changeFirstName[i].firstElementChild.innerHTML = "My Name";
+}
 // Delete the <li> that contains the text node “Sarah”.
-
+for(i=0; i<liItems.length; i++){ //I use liItem from before
+  if(liItems[i].innerHTML == "Sarah"){
+    liItems[i].remove();
+  }
+}
 </script>
 
   </body>
