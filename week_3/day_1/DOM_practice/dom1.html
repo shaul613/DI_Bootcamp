@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+<div class="outer" id="outer">
+  <div class="inner">
+    <h1>header 1</h1>
+  </div>
+  <div class="inner">
+    <h2>header 2</h2>
+  </div>
+  <div class="inner">
+    <p>some text</p>
+  </div>
+</div>
+<script type="text/javascript">
+  let divs = document.getElementsByTagName("div"); //returns collection of all divs
+  console.log(divs);
+  let divs_inner = document.getElementsByClassName("inner"); //returns collection of all elemnts matching class name
+  console.log(divs_inner);
+  let divs_outer = document.getElementById('outer'); //returns collection of id
+  console.log(divs_outer);
+  console.log(document.querySelector('.ineer')); //retunrs first elemnet with specified selector
+  console.log(document.querySelector("#outer"));
+  console.log(document.querySelector("div"));
+  console.log(document.querySelectorAll(".inner")); //returns all elemnds with specified selector
+  console.log(divs.getAttribute("class"));
+</script>
+  </body>
+</html>
