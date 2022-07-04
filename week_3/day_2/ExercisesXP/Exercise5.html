@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1 id="main">Touch Me!!</h1>
+    <ul>
+      <li>Click = color red</li>
+      <li>Mouseover = background color green</li>
+      <li>Mouseout = background color yellow</li>
+      <li>dblclick = pink border</li>
+    </ul>
+<script type="text/javascript">
+// Add many events listeners to one element on your webpage. Use the click, mouseover, mouseout and
+// dblclick events.
+// Each listener should do a different thing, for instance - change position x, change position y, change
+// color, change the font size… and more.
+let element = document.getElementById("main");
+function multiEvent(elm, event, prop, val){
+  elm.addEventListener(event, function(){
+    this.setAttribute("style", `${prop}: ${val}`);
+  });
+}
+
+multiEvent(element, "click", "color", "red");
+multiEvent(element, "mouseover", "background-color", "green");
+multiEvent(element, "mouseout", "background-color", "yellow");
+multiEvent(element, "dblclick", "border", "pink dotted 5px");
+</script>
+  </body>
+</html>
