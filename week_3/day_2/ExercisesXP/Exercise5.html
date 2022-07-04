@@ -20,7 +20,7 @@
 let element = document.getElementById("main");
 function multiEvent(elm, event, prop, val){
   elm.addEventListener(event, function(){
-    this.setAttribute("style", `${prop}: ${val}`);
+    this.style[prop] = val;
   });
 }
 
