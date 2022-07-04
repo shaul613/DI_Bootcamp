@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div id="container">Users:</div>
+      <ul class="list">
+          <li>John</li>
+          <li id="pete">Pete</li>
+      </ul>
+      <ul class="list">
+          <li>David</li>
+          <li>Sarah</li>
+          <li>Dan</li>
+      </ul>
+<script type="text/javascript">
+  let divs = document.getElementsByTagName("Div");
+  let ul = document.getElementsByTagName("ul");
+  // console.log(ul);
+   console.log(ul[0]);
+   console.log(ul[1]);
+   for (x in ul) {
+   	console.log(ul[x]);
+    // console.log(x);
+   }
+</script>
+  </body>
+</html>
