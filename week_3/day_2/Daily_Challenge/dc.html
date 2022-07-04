@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Mad Libs</h1>
+    <form id="libform">
+        <label for="noun">Noun:</label><input type="text" id="noun"><br>
+        <label for="adjective">Adjective:</label><input type="text" id="adjective"><br>
+        <label for="person">Someone's Name:</label><input type="text" id="person"><br>
+        <label for="verb">Verb:</label><input type="text" id="verb"><br>
+        <label for="place">A place:</label><input type="text" id="place"><br>
+        <button id="lib-button">Lib it!</button>
+    </form>
+    <p>Generated story:
+    <span id="story"></span>
+    </p>
+
+<script type="text/javascript">
+  function isEmpty(input){ //function to check if all inputs filled
+    let result;
+    for(i in input){
+      if(input[i].value == 0){
+        result = true;
+        break;
+      } else{
+        result = false;
+      }
+    }
+    return result;
+  }
+// Get the value of each of the inputs in the HTML file when the form is submitted. Remember the
+// event.preventDefault()
+// Make sure the values are not empty
+// Write a story that uses each of the values.
+// Make sure you check the console for errors when playing the game.
+// Bonus: Add a “shuffle” button to the HTML file, when clicked the button should change the story
+// currently displayed (but keep the values entered by the user). The user could click the button at
+// least three times and get a new story. Display the stories randomly.
+document.getElementById("lib-button").addEventListener("click", function(){
+  event.preventDefault();
+  let userInputs = Array.from(document.getElementsByTagName("input"));
+  let valid = !isEmpty(userInputs);
+  let story;
+  if(valid){
+    story = `${userInputs[2].value} ${userInputs[3].value} to ${userInputs[4].value} for a ${userInputs[1].value} ${userInputs[0].value}`;
+    document.getElementById("story").innerHTML = story;
+  } else{
+    alert("Make sure no inputs are blank!")
+  }
+});
+</script>
+  </body>
+</html>
