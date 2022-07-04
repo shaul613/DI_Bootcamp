@@ -39,7 +39,7 @@ newButton.innerHTML = "Make Bold";
 document.body.appendChild(newButton);
 document.getElementsByTagName("button")[0].addEventListener("click", function(){
   let thePs = Array.from(document.querySelectorAll("article p"));
-  thePs.forEach(item => {item.style.color = "red"});
+  thePs.forEach(item => {item.style.fontWeight = "bold"});
 })
 // BONUS : When you hover on the h1, set the font size to a random pixel size between 0 to 100.
 // (Check out this documentation)
