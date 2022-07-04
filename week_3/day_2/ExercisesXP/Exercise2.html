@@ -5,6 +5,68 @@
     <title></title>
   </head>
   <body>
-    
+    <form>
+      <label for="fname">First name:</label><br>
+      <input type="text" id="fname" name="fname"><br>
+      <label for="lname">Last name:</label><br>
+      <input type="text" id="lname" name="lname"><br><br>
+      <input type="submit" value="Submit" id="submit">
+    </form>
+    <ul class="usersAnswer"></ul>
+<script type="text/javascript">
+// Retrieve the form and console.log it.
+let theForm = document.getElementsByTagName("form")[0];
+console.log(theForm);
+// Retrieve the inputs by their id and console.log them.
+console.log(document.getElementById("fname"));
+console.log(document.getElementById("lname"));
+let theSubmit = document.getElementById("submit");
+console.log(theSubmit);
+// Retrieve the inputs by their name attribute and console.log them.
+console.log(document.querySelectorAll("[name='fname']")[0]);
+console.log(document.querySelectorAll("[name='lname']")[0]);
+// When the user submits the form (ie. submit event listener)
+// use event.preventDefault(), why ?
+// get the values of the input tags,
+// make sure that they are not empty,
+// create an li per input value,
+// then append them to a the <ul class="usersAnswer"></ul>, below the form.
+
+function isEmpty(input){ //function to check if all inputs filled
+  let result;
+  for(i in input){
+    if(input[i].value == 0){
+      result = true;
+      break;
+    } else{
+      result = false;
+    }
+  }
+  return result;
+}
+
+theSubmit.onclick = function(){
+  event.preventDefault(); //Security?
+  let theInput = Array.from(document.getElementsByTagName("input"));
+  theInput.pop(); //I don't want the button input in my array...
+  let valid = true;
+  if(isEmpty(theInput)){
+    alert(`Please make sure you fillet out all fields!`);
+    valid = false;
+  }
+  if(valid){
+    for(i in theInput){
+      let newLi = document.createElement("li");
+      newLi.innerHTML = theInput[i].value;
+      document.getElementsByClassName("usersAnswer")[0].appendChild(newLi);
+    }
+  }
+}
+// The output should be :
+// <ul class="usersAnswer">
+//     <li>first name of the user</li>
+//     <li>last name of the user</li>
+// </ul>
+</script>
   </body>
 </html>
