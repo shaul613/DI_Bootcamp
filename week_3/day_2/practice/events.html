@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div id="root">
+      <!-- onmouseover="myFunc(this)" onclick="clickFunc()" -->
+      <h1>hi</h1>
+    </div>
+
+    <script type="text/javascript">
+// function myFunc(elm){
+//   let p = document.createElement('p');
+//   p.textContent = "haha";
+//   elm.appendChild(p);
+//   // console.log(`hello ${elm}`);
+// }
+//
+// function clickFunc(){
+//   console.log("you clicked!");
+// }
+
+let root = document.getElementById("root");
+
+root.addEventListener('click', function(){
+  console.log("You clicked!!");
+})
+    </script>
+  </body>
+</html>
