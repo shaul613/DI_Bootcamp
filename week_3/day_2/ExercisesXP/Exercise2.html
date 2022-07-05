@@ -45,8 +45,8 @@ function isEmpty(input){ //function to check if all inputs filled
   return result;
 }
 
-theSubmit.onclick = function(){
-  event.preventDefault(); //Security?
+theSubmit.onclick = function(event){
+  event.preventDefault();
   let theInput = Array.from(document.getElementsByTagName("input"));
   theInput.pop(); //I don't want the button input in my array...
   let valid = true;
