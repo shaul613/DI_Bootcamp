@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div id="container" class="">
+
+    </div>
+<script type="text/javascript">
+let colors = ["blue", "yellow", "green", "pink"];
+// 1. Add inside the HTML file a div of id "container" (do it directly in the HTML)
+// 2. Add one button per color inside the div container (do it directly in the JS)
+// 3. Each button should have an "click" event listener that changes the background color of
+// the document, to the color of the button (do it directly in the JS)
+
+for(let i in colors){
+  let newButton = document.createElement("button");
+  newButton.setAttribute("name", colors[i]);
+  let text = document.createTextNode(colors[i]);
+  newButton.appendChild(text);
+  document.getElementById("container").appendChild(newButton);
+  let buttons = Array.from(document.getElementsByTagName("button"));
+  buttons[i].addEventListener("click", function(){
+    document.body.style.backgroundColor = colors[i];
+  });
+}
+
+</script>
+  </body>
+</html>
