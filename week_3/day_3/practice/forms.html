@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <form id="theForm" class="" action="index.html" method="post">
+      <input type="text" name="" value="">
+      <input type="text" name="" value="">
+      <button type="submit" name="button">Submit</button>
+    </form>
+    <button id="display" type="button" name="button">Display Books</button>
+    <div id="container" class="">
+
+    </div>
+<script type="text/javascript">
+document.forms[0].addEventListener("submit", addBook);
+let booksArr = [];
+function addBook(event){
+  event.preventDefault();
+  let inputs = Array.from(document.getElementsByTagName("input"));
+  let booksObj = {
+    title: inputs[0],
+    author: inputs[1],
+  };
+  booksArr.push(booksObj)
+  console.log(booksArr);
+}
+document.getElementById("display").addEventListener("click", function(){
+  let newUl = document.createElement("ul");
+  document.getElementById("container").appendChild(newUl);
+  for(i in booksArr){
+    let newLi = document.createElement("li");
+    let text = document.createTextNode(`${booksArr[i]}`)
+    newLi.appendChild(text);
+    document.getElementById("container").appendChild(newLi);
+  }
+})
+</script>
+  </body>
+</html>
