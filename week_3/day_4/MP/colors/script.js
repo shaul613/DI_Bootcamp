@@ -11,3 +11,7 @@ function addColors(){
 }
 
 addColors();
+
+function addBoxes(){
+
+}
