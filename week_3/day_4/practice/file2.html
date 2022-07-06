@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+
+    </style>
+  </head>
+  <body>
+    <div id="ps" class="">
+
+    </div>
+    <button id="btn" type="button" name="button">click to add</button>
+<script type="text/javascript">
+let btn = document.getElementById("btn");
+let counter = 0;
+btn.addEventListener("click", startAdding);
+
+function startAdding(){
+  setInterval(addP, 2000);
+}
+
+function addP(){
+  counter++;
+  let elm = document.createElement("p");
+  let text = document.createTextNode("This is a paragraph " + counter);
+  elm.appendChild(text);
+  document.getElementById("ps").appendChild(elm);
+}
+</script>
+  </body>
+</html>

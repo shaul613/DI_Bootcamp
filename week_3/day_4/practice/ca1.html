@@ -17,15 +17,25 @@
 
     </div>
 <script type="text/javascript">
+let counter = 11;
 function addBanner(){
-  let banner = document.createElement("h1");
-  let text = document.createTextNode("Sale ends in 10 minutes!");
-  banner.appendChild(text);
-  document.getElementById("banner").appendChild(banner);
-  let theH1 = document.querySelector("#banner h1");
-  changeStyle();
+  if(counter > 0){
+    counter--;
+    let banner = document.createElement("h1");
+    banner.innerHTML = "Sale ends in <span id='s'><span> seconds";
+    // let text = document.createTextNode(`Sale ends in  seconds!`);
+    // banner.appendChild(text);
+    document.getElementById("banner").appendChild(banner);
+    let seconds = document.createTextNode(counter);
+    document.getElementById("s").appendChild(seconds);
+
+    // changeStyle();
+
+  }
+
 }
-setTimeout(addBanner, 5000);
+setInterval(addBanner, 1000);
+
 
 function changeStyle(){
   setTimeout(backColor, 2000);
