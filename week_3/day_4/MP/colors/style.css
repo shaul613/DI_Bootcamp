@@ -1,8 +1,11 @@
 
-/* .paintBox{
-  width: 33%;
-  height: 50px;
-} */
+body{
+  display: flex;
+}
+.paintBox{
+  border: black 1px solid;
+  margin: 5px;
+}
 
 #paint_colors{
   width: 30vw;
@@ -16,4 +19,17 @@
 
 #clear{
   grid-column: 1/span 3;
+}
+
+#boxes{
+  width: 70vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(32, 1fr);
+  grid-template-rows: repeat(32, 1fr);
+}
+
+.fillBox{
+  background-color: white;
+  border: 1px solid black;
 }
