@@ -1,0 +1,18 @@
+
+.paintBox{
+  width: 33%;
+  height: 50px;
+}
+
+#paint_colors{
+  width: 30vw;
+  display: grid;
+  grid-template-rows: repeat(8, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  background-color: gray;
+  grid-gap: 5px;
+}
+
+#clear{
+  grid-column: 1/span 3;
+}
