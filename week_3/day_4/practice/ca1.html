@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      .backRed{
+        background-color: red;
+      }
+      .borderBlue{
+        border: solid blue 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="banner" class="">
+
+    </div>
+<script type="text/javascript">
+function addBanner(){
+  let banner = document.createElement("h1");
+  let text = document.createTextNode("Sale ends in 10 minutes!");
+  banner.appendChild(text);
+  document.getElementById("banner").appendChild(banner);
+  let theH1 = document.querySelector("#banner h1");
+  changeStyle();
+}
+setTimeout(addBanner, 5000);
+
+function changeStyle(){
+  setTimeout(backColor, 2000);
+  setTimeout(borderColor, 3000);
+}
+
+function backColor(){
+  document.querySelector("#banner h1").classList.toggle("backRed")
+}
+
+function borderColor(){
+  document.querySelector("#banner h1").classList.toggle("borderBlue")
+}
+</script>
+  </body>
+</html>

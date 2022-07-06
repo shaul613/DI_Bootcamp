@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      .dark{
+        background-color:blue;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="btn" type="button" name="button">Click Me</button>
+<script type="text/javascript">
+let btn = document.getElementById("btn");
+btn.addEventListener("click", playGame);
+
+function stopUser(){
+  alert("you lost")
+}
+
+function playGame(){
+  console.log("the game starts");
+  setTimeout(stopUser(), 2000);
+}
+
+function changeColor(){
+  document.body.classList.toggle("dark")
+}
+
+</script>
+  </body>
+</html>
