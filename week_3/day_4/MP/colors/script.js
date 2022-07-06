@@ -50,6 +50,13 @@ function handleColorClick(e){ //Changes / defines paintbrush color
   function fillBox(){
     event.target.style.backgroundColor = paintbrush;
   }
+  document.getElementById("clear").addEventListener('click', function(){
+    let boxes = Array.from(document.getElementsByClassName("fillBox"));
+    for(i in boxes){
+      boxes[i].style.backgroundColor = "white";
+    }
+    paintbrush = "";
+  });
 }
 
 addEventToClass("paintBox", "click", handleColorClick);
