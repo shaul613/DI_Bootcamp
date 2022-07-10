@@ -11,23 +11,19 @@ let ordinal = ["th","st","nd","rd"];
 // Write a JavaScript program that displays the colors in the following order : “1st choice is
 // Blue .” “2nd choice is Green.” “3rd choice is Red.” ect…
 // Hint : Use the array methods taught in class and ternary operator.
-
 color.forEach(func);
-func(item, i, arr){
+function func(item, i, arr){
   let result = `${i+1}`;
   switch(i){
-    case 0: result += ordinal[1];
-    case 1: result += oridanl[2];
-    case 2: result += ordinal[3];
+    case 0: result += ordinal[1]; break;
+    case 1: result += ordinal[2]; break;
+    case 2: result += ordinal[3]; break;
     default: result += ordinal[0];
   }
-  console.log(result);
+  result += ` choice is ${item}`;
+  arr[i] = result;
 }
-let suf = (i) => {i==0 ? ordinal[1] : i==1 ? ordinal[2] : i==2 ? ordianl[3] : ordianl[0]};
-return suf(index);
-console.log(fixIndex(color[0]));
-let newArr = color.forEach()
-
+console.log(color);
 </script>
   </body>
 </html>
