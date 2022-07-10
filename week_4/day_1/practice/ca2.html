@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+<script type="text/javascript">
+// Greet the user with his name, the user's name is a parameter. Do this exercise,
+// * first by using function declarations
+// * then function expression,
+// * then arrow function
+function greet(name){
+  alert(`hello ${name}`)
+}
+greet("Jason");
+
+let username2 = name => alert("hello "+name);
+username2("Jason");
+
+function username3(){
+  alert("hello Jason")
+}
+username3();
+</script>
+  </body>
+</html>

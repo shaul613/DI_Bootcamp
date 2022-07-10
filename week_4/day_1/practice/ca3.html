@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+<script type="text/javascript">
+// 1. Check if the user's age is higher than 18. Use ternary operator.
+// - if the user's age is higher than 18, return "You can drive"
+// - else, return "You cannot drive"
+// Do this exercise,
+// * first by using function declarations
+function drive(age){
+  let result = age >= 18 ? "You can drive" : "You cannot drive";
+  return result;
+}
+console.log(drive(20));
+// * then function expression,
+const drive2 = function(age){
+  let result = age >= 18 ? "You can drive" : "You cannot drive";
+  return result;
+}
+console.log(drive2(20));
+// * then arrow function
+let drive3 = (age) => age>=18 ? "You can drive" : "You cannot drive";
+console.log(drive3(20));
+</script>
+  </body>
+</html>
