@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <form class="" action="index.html" method="post">
+      <!-- Note: I found this solution online here:
+      https://stackoverflow.com/questions/19508183/how-to-force-input-to-only-allow-alpha-letters -->
+      <input id="letters" type="text" name="" value="" onkeydown='return /[a-z]/i.test(event.key)'>
+    </form>
+<script type="text/javascript">
+// Create an input type text that takes/shows only letters.
+// (ie. numbers and special characters won’t be accepted)
+// Hint: use one of the following events to remove any character that is not a letter
+// keyup event
+// or keypress event
+// or keydown event
+// or input event
+// Hint : Check out keycodes in Javascript or Regular Expressions
+// </script>
+  </body>
+</html>
