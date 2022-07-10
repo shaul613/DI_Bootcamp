@@ -34,6 +34,28 @@ const gameInfo = [
    items: ["book", "pen"]
  },
 ];
+// Create an array using forEach that contains all the usernames from the gameInfo array, add an exclamation
+// point (ie. “!”) to the end of every username.
+// The new array should look like this :
+// let usernames = ["john!", "becky!", "susy!", "tyson!"]
+let usernameArr = [];
+gameInfo.forEach((item, i) => {usernameArr.push(`${item.username}!`)});
+console.log(usernameArr);
+// 2. Create an array using forEach that contains the usernames of all players with a score bigger than 5.
+// Use the ternary operator
+// The new array should look like this :
+// let winners = ["becky", "susy"]
+let greaterThanFive = [];
+gameInfo.forEach((item) => {item.score>5 ? greaterThanFive.push(item.username) : 0});
+console.log(greaterThanFive);
+/*NOTE: I read online that a regular IF statement should be used if there's no ELSE, like in this case.
+see: https://stackoverflow.com/questions/15009194/assign-only-if-condition-is-true-in-ternary-operator-in-javascript
+*/
+
+// 3. Find and display the total score of the users. (Hint: The total score is 71)
+let sum = 0;
+gameInfo.forEach((item) => {sum += item.score});
+console.log(sum);
 </script>
   </body>
 </html>
