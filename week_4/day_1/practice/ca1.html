@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+<script type="text/javascript">
+  let text = "Hello";
+
+  function checkText (){
+  	console.log("In the function",text); //in the function hello
+  	text += " World";
+  	console.log("Still in the function",text); //in the function hello world
+  }
+
+  console.log("before the function", text); //before the function hello
+
+  checkText()
+
+  console.log("after the function", text); //after the function hello world
+
+  let friend = "Harry";
+
+function checkfriend (){
+	let friend = "Alice";
+	console.log("In the function",friend); //in the function alice
+	friend += " Smith";
+	console.log("Still in the function",friend); //still in the function smith
+}
+
+console.log("before the function", friend); //before the function harry
+
+checkfriend()
+
+console.log("after the function", friend); //after the function harry
+</script>
+  </body>
+</html>
