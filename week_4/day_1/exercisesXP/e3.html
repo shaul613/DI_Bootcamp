@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+<script type="text/javascript">
+// Write a JavaScript arrow function that checks whether the value of the argument passed, is a
+// string or not. Use ternary operator
+// Check out the example below to see the expected output
+// Example:
+// console.log(isString('hello'));
+// //true
+// console.log(isString([1, 2, 4, 0]));
+// //false
+let isString = (item) => typeof(item) == "string";
+console.log(isString("hello")); //true
+console.log(isString(45)); //false
+console.log(isString(["a", "b", "c"])); //false
+
+</script>
+  </body>
+</html>
