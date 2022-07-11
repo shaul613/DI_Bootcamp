@@ -10,10 +10,10 @@ integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmV
   <body>
     <!-- Image and text -->
 <nav id="theNavbar" class="navbar navbar-light bg-light">
-  <a class="navbar-brand" href="#">
+  <!-- <a class="navbar-brand" href="#">
     <img src="" width="30" height="30" class="d-inline-block align-top" alt="">
     Bootstrap
-  </a>
+  </a> -->
 </nav>
     <div id="e3"></div>
 <script type="text/javascript">
@@ -61,12 +61,19 @@ console.log(kiloToGram3(30));
 // In your js file, create a self invoking funtion that takes 1 argument: the name of the user that just signed in.
 // The function should add a div in the nabvar, displaying the name of the user and his profile picture.
 (function user(name){
-  let navbar = document.getElementById("navbar"); //the navbar
+  let navbar = document.getElementById("theNavbar"); //the navbar
   let newDiv = document.createElement("div"); //div in navbar
   let username = document.createElement("p"); //Jons's name in div
   let userPic = document.createElement("img"); //John's pic
-  username.appendChild(createTextNode(name));
-  
+  let text = document.createTextNode(name);
+  username.appendChild(text);
+  userPic.setAttribute("src", "https://thumbs.dreamstime.com/z/faceless-businessman-avatar-man-suit-blue-tie-human-profile-userpic-face-features-web-picture-gentlemen-85824471.jpg")
+  newDiv.appendChild(username);
+  userPic.classList.add("d-inline-block", "align-top");
+  userPic.setAttribute("style", "sidth: 30px; height: 30px;");
+  newDiv.appendChild(userPic);
+  newDiv.classList.add("navbar-brand");
+  navbar.appendChild(newDiv);
 })("John");
 </script>
   </body>
