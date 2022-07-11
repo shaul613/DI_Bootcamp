@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div id="container" class="">
+
+    </div>
+<script type="text/javascript">
+// Exercise # ANONYMOUS FUNCTIONS
+// 1. Add in your html file a div with an id of container
+// 2. Create a self invoking function that takes one parameter the name of the user
+// 3. When invoked, the function adds the name of the user in a sentence in the div
+// DO IT first with a function expression, then with an arrow function
+(function(name){
+  let id = document.getElementById("container");
+  let newH1 = document.createElement("h1");
+  let text = document.createTextNode(`Hello ${name}`);
+  newH1.appendChild(text);
+  id.appendChild(newH1);
+})("John");
+
+((name) => {
+  let id = document.getElementById("container");
+let newH1 = document.createElement("h1");
+let text = document.createTextNode(`Hello ${name}`);
+newH1.appendChild(text);
+id.appendChild(newH1);})("John")
+</script>
+  </body>
+</html>

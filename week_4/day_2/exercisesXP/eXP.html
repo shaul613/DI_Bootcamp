@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <!-- Image and text -->
+<nav id="theNavbar" class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="#">
+    <img src="" width="30" height="30" class="d-inline-block align-top" alt="">
+    Bootstrap
+  </a>
+</nav>
+    <div id="e3"></div>
+<script type="text/javascript">
+//Exercise 1
+// Create a one line function (ie. an arrow function) that receives two numbers as parameters and returns the sum.
+let sumFunc = (x,y) => x+y;
+console.log(sumFunc(1,2));
+
+//Exercise 2
+// Create a function that receives a weight in kilograms and returns it in grams. (Hint: 1 kg is 1000gr)
+// First, use function declaration and invoke it.
+function kiloToGram(kilo){
+  return kilo*1000;
+};
+console.log(kiloToGram(100));
+// Then, use function expression and invoke it.
+let kiloToGram2 = function(kilo){
+  return kilo*1000;
+}
+console.log(kiloToGram2(50));
+// Write in a one line comment, the difference between function declaration and function expression.
+/*Function delaration - can be used even if the function is delared later in the file.
+Function expression - can only be used in file after it's been declared, like a variable.*/
+
+// Finally, use a one line arrow function and invoke it.
+let kiloToGram3 = kilo => kilo*1000;
+console.log(kiloToGram3(30));
+
+//Exercise 3
+// Create a self invoking function that takes 4 arguments: number of children, partner’s name,
+// geographic location, job title.
+// The function should display in the DOM a sentence like "You will be a <job title> in <geographic
+// location>, and married to <partner's name> with <number of children> kids."
+(function(numOfChildren, partnerName, goeLocation, jobTitle){
+  let id = document.getElementById("e3");
+  let elm = document.createElement("h1");
+  let text = document.createTextNode(`You will be a ${jobTitle} in ${goeLocation}, and married to ${partnerName} with ${numOfChildren} kids.`);
+  elm.appendChild(text);
+  id.appendChild(elm);
+})(2, "Jason", "California", "Software Developer");
+
+//Exercise 4
+// john has just signed in to your website and you want to welcome him.
+// Create a Bootstrap Navbar in your HTML file.
+// In your js file, create a self invoking funtion that takes 1 argument: the name of the user that just signed in.
+// The function should add a div in the nabvar, displaying the name of the user and his profile picture.
+(function user(name){
+  let navbar = document.getElementById("navbar"); //the navbar
+  let newDiv = document.createElement("div"); //div in navbar
+  let username = document.createElement("p"); //Jons's name in div
+  let userPic = document.createElement("img"); //John's pic
+  username.appendChild(createTextNode(name));
+  
+})("John");
+</script>
+  </body>
+</html>
