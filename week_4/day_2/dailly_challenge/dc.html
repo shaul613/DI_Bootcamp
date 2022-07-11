@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+<script type="text/javascript">
+let client = "John";
+let groceries = {
+    fruits : ["pear", "apple", "banana"],
+    vegetables: ["tomatoes", "cucumber", "salad"],
+    totalPrice : "20$",
+    other : {
+        payed : true,
+        meansOfPayment : ["cash", "creditCard"]
+    }
+}
+// Hint: To do this daily challenge, take a look at today’s lesson Pass By Value & Pass By Reference
+// Create an arrow function named displayGroceries, that console.logs the 3 fruits from the groceries object.
+// Use the forEach method.
+groceries["fruits"].forEach(item => console.log(item));
+// Create another arrow function named cloneGroceries.
+// In the function, create a variable named user that is a copy of the client variable. (Tip : make the user
+// variable equal to the client variable)
+// Change the client variable to “Betty”. Will we also see this modification in the user variable ? Why ?
+// In the function, create a variable named shopping that is a copy of the groceries object. (Tip : make the
+// shopping variable equal to the groceries variable)
+// Change the value of the totalPrice key to 35$. Will we also see this modification in the shopping object ? Why ?
+// Change the value of the payed key to false. Will we also see this modification in the shopping object ? Why ?
+// Invoke the cloneGroceries function.
+let cloneGroceries = () => {
+  let user = client;
+  client = "Betty"; //Does not affect 'user' because 'client' has its own location in memory
+  console.log(user);
+  let shopping = groceries;
+  groceries.totalPrice = "35$"; //Affects shopping because an object is just a reference to many items with their own location in memory, thus 'shopping' now reffers to the modified item
+  console.log(shopping.totalPrice);
+  groceries.other["payed"] = false; //Same as above.
+  console.log(shopping.other.payed);
+}
+cloneGroceries();
+
+</script>
+  </body>
+</html>
