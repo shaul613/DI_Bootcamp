@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div id="root" class=""></div>
+<script type="text/javascript">
+function createTable(){
+  let root = document.getElementById("root");
+  let newTable = document.createElement("table");
+  newTable.setAttribute("id", "theTable");
+  root.appendChild(newTable);
+  createRows('theTable', 7);
+  createColumns('theTable', 7);
+}
+
+function createRows(table_id, numRows){
+  let table = document.getElementById(table_id);
+  for(i=0; i<numRows; i++){
+    let row = document.createElement("tr");
+    row.classList.add("row");
+    row.setAttribute("id", `row${i}`);
+    table.appendChild(row);
+  }
+}
+
+function createColumns(table_id, numCol){
+  let table = document.getElementById(table_id);
+  let rowsArr = Array.from(document.getElementsByTagName("tr"));
+  for(i in rowsArr){
+    for(j=0; j<numCol; j++){
+      let col = document.createElement("td");
+      col.classList.add("col");
+      col.setAttribute("id", `col${i}-${j}`);
+      rowsArr[i].appendChild(col);
+    }
+  }
+}
+
+createTable();
+</script>
+  </body>
+</html>
