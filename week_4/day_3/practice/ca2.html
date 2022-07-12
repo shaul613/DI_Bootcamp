@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+<script type="text/javascript">
+// Exercise 1:  create a new array that filters only the positive value
+let numbers = [-23,-20,-17, -12, -5, 0, 1, 5, 12, 19, 20];
+let positiveNum = numbers.filter(item => item > 0);
+console.log(positiveNum);
+// Exercise 2: Suppose you have a list of Star Trek characters,
+// and you want to get just the characters that appeared in Star Trek: The Next Generation.
+// Use filter() to filter the array of characters below
+const characters = [
+   { name: 'James T. Kirk', series: ['Star Trek'] },
+   { name: 'Spock', series: ['Star Trek', 'Star Trek: The Next Generation'] },
+   { name: 'Jean-Luc Picard', series: ['Star Trek: The Next Generation'] },
+   { name: 'Worf', series: ['Star Trek: The Next Generation', 'Star Trek: Deep Space Nine'] }
+];
+let starTrek = characters.filter(item => item.series.includes("Star Trek: The Next Generation"));
+console.log(starTrek);
+// ## Exercise 3 NOT MANDATORY - send me the result by slack
+let colors = ["blue", "red", "red", "blue", "yellow"]
+// Use the filter method to create an array without duplicates. The result should be
+// ["blue","red","yellow"]
+let colorsUnique = colors.filter((item, i, arr) => arr.indexOf(item) == i ? item : 0);
+console.log(colorsUnique);
+</script>
+  </body>
+</html>
