@@ -6,7 +6,24 @@
   </head>
   <body>
 <script type="text/javascript">
+let obj = {
+  one:1,
+  two:2,
+  test:function (){
+    return this.one;
+  }
+};
+console.log(obj.test());
 
+function Student(address, bootcamp){
+  this.school = "Developers Institute";
+  this.bootcamp = bootcamp;
+  this.address = address;
+}
+
+let tom = new Student("NY", "JS");
+tom.bootcamp = "C++"
+console.log(tom);
 </script>
   </body>
 </html>
