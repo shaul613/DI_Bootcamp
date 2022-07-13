@@ -15,7 +15,7 @@ let obj = {
 };
 console.log(obj.test());
 
-function Student(address, bootcamp){
+function Student(address, bootcamp){ //function constructor
   this.school = "Developers Institute";
   this.bootcamp = bootcamp;
   this.address = address;
@@ -24,6 +24,45 @@ function Student(address, bootcamp){
 let tom = new Student("NY", "JS");
 tom.bootcamp = "C++"
 console.log(tom);
+//-------------------------------
+
+class Character {
+  constructor(name, house, points){
+    this.name = name;
+    this.house = house;
+    this.points = points;
+  }
+
+  fight(){
+    console.log(`${this.name} is fighting`);
+    this.points -= 10;
+  }
+
+  powerDring(){
+    this.points += 1000;
+  }
+}
+
+class MagicChar extends Character{
+  constructor(name, house, points, magic){
+    super(name, house, points);
+    this.magic = magic;
+    this.listSpells = [];
+  }
+
+  fight(){
+    this.points -= 100;
+  }
+
+  createSpell(newSpell){
+    this.listSpells.push(newSpell);
+  }
+}
+
+let mChar = new MagicChar("lullu", "home", 400000, "strong");
+console.log(mChar);
+mChar.createSpell("stone");
+mChar.fight();
 </script>
   </body>
 </html>
