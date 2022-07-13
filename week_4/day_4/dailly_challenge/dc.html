@@ -34,7 +34,18 @@ class Video{
 let videoOne = new Video("the movie", "stephan", 12541);
 console.log(videoOne.watch());
 
+let videoInfo = [
+  ["movie2", "james", 54289],
+  ["movie3", "jason", 28372],
+  ["movie4", "alex", 20923],
+  ["movie5", "amy", 27092],
+  ["movie6", "emma", 16271]
+];
 
+for(i in videoInfo){
+  let vid = new Video(...videoInfo[i]);
+  console.log(vid.watch());
+}
 </script>
   </body>
 </html>
