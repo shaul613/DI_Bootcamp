@@ -101,7 +101,26 @@ class Labrador extends Dog { //this one
 //--------------------------
 
 //Exercise 6
-
+// Evaluate these (ie True or False)
+[2] === [2] //false
+console.log({} === {}); //false. I put in a log because it caused an error.
+// What is, for each object below, the value of the property number and why?
+const object1 = { number: 5 }; //5
+const object2 = object1; //5 - refferences same values in boject1
+const object3 = object2; //5 - same as above
+const object4 = { number: 5}; //5 - new value created in memory
+object1.number = 4; //4 - changes the value in memory.
+console.log(object2.number); //4 - object2 values refferences the same location in memory as object1 values
+console.log(object3.number); //4 - same as above
+console.log(object4.number); //5 - object4 values have their own location in memory
+// Create a class Animal with the attributes name, type and color. The type is the animal type,
+// for example: dog, cat, dolphin ect …
+// Create a class Mamal that extends from the Animal class. Inside the class, add a method called
+// sound(). This method takes a parameter: the sound the animal makes, and returns the details of the
+// animal (name, type and color) as well as the sound it makes.
+// Create a farmerCow object that is an instance of the class Mamal. The object accepts a name, a
+// type and a color and calls the sound method that “moos” her information.
+// For example: Moooo I'm a cow, named Lily and I'm brown and white
 </script>
   </body>
 </html>
