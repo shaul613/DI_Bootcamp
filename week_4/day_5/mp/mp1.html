@@ -80,20 +80,20 @@ const robots = [
   }
 ];
 
-function addElm(parent, elm, id, elmClass){
+function addElm(parent, elm, id, elmClass){ //function for creating element with class and id
   newElm = document.createElement(elm);
   newElm.setAttribute("id", id);
   newElm.setAttribute("class", elmClass);
   parent.appendChild(newElm);
 }
 
-function createPageLayout(){
+function createPageLayout(){ //creating page layout
   addElm(document.body, "nav", "navbar", "");
   addElm(document.body, "section", "robots", "");
 }
 createPageLayout();
 
-function addRobots(robot){
+function addRobots(robot){ //adding robots to page
   let parent = document.getElementById("robots");
   let id = robot['id'].toString();
   addElm(parent, "div", `img${id}`, "robotItem");
@@ -107,11 +107,37 @@ function addRobots(robot){
   document.querySelector(`#img${id} .robotName`).appendChild(name);
   document.querySelector(`#img${id} .robotEamil`).appendChild(email);
 }
+robots.forEach(addRobots);
 
-function addRobotContent(robot){
+function addNavbar(){ //adding navbar
+  let parent = document.getElementById("navbar");
+  addElm(parent, "form", "navForm", "");
+  let theForm = document.getElementById("navForm");
+  addElm(theForm, "input", "search", "");
+  document.getElementById("search").setAttribute("placeholder", "Search Robots");
+}
+addNavbar();
+
+function handleSearch(e){
+  let input = e.target.value.toLowerCase().trim();
+  console.log(input);
+  let robotElm = Array.from(document.getElementsByClassName("robotItem"));
+  robotElm.forEach(function func(elm, i){
+    let name = robots[i].name.toLowerCase();
+    console.log(name);
+    if(input.length > 0){
+      elm.setAttribute("style", "display: none;");
+      if(name.includes(input)){
+        elm.setAttribute("style", "display: ")
+      }
+    } else{
+      elm.setAttribute("style", "display: ")
+    }
+  });
 
 }
-robots.forEach(addRobots);
+let searchBar = document.getElementById("search");
+searchBar.addEventListener("keyup", handleSearch);
 </script>
   </body>
 </html>

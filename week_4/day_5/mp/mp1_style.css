@@ -36,3 +36,14 @@ body{
   margin: 10%;
   border-radius: 50%;
 }
+
+#navbar{
+  height: 10vh;
+  background-color: #f9ec00c9;
+}
+
+#search{
+  width: 50%;
+  margin-top: 3vh;
+  margin-left: 25%;
+}
