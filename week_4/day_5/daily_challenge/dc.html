@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+<script type="text/javascript">
+function anagram(strA, strB){
+  /*What am I doing here?
+  1. Removing whitespaces from string.
+  2. Converting to lowercase.
+  3. Converting string to array.
+  4. Sorting array.
+  5. Converting sorted array to string with reduce method.*/
+  let a = Array.from(strA.replaceAll(" ", "").toLowerCase()).sort().reduce((t, c) => t+c);
+  let b = Array.from(strB.replaceAll(" ", "").toLowerCase()).sort().reduce((t, c) => t+c);
+  return a == b;
+}
+console.log(anagram("Hello World", "hello world")); //true
+console.log(anagram("hEllo world", "he*lo world")); //false
+console.log(anagram("Hello world", "Hello beautiful world")); //false
+console.log(anagram("hello world", "lol dol herw")); //true
+console.log(anagram("    hello", "hello")); //true
+console.log(anagram("hello", "world")); //false
+
+</script>
+  </body>
+</html>
