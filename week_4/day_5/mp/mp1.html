@@ -79,19 +79,39 @@ const robots = [
     image:'https://robohash.org/10?200x200'
   }
 ];
-function addElm(parent, elm, id){
+
+function addElm(parent, elm, id, elmClass){
   newElm = document.createElement(elm);
   newElm.setAttribute("id", id);
-  // elmText = document.createTextNode(text);
-  // newElm.appendChild(text);
+  newElm.setAttribute("class", elmClass);
   parent.appendChild(newElm);
 }
-// function createBackground(){
-//   document.body.appendChild()
-// }
-addElm(document.body, "nav", "navbar");
-addElm(document.getElementById("navbar"), "div", 'cards');
 
+function createPageLayout(){
+  addElm(document.body, "nav", "navbar", "");
+  addElm(document.body, "section", "robots", "");
+}
+createPageLayout();
+
+function addRobots(robot){
+  let parent = document.getElementById("robots");
+  let id = robot['id'].toString();
+  addElm(parent, "div", `img${id}`, "robotItem");
+  let newRobotElm = document.getElementById(`img${id}`);
+  addElm(newRobotElm, "img", "", "robotImg");
+  addElm(newRobotElm, "h3", "", "robotName");
+  addElm(newRobotElm, "p", "", "robotEamil");
+  document.querySelector(`#img${id} .robotImg`).setAttribute("src", robot.image);
+  let name = document.createTextNode(robot.name);
+  let email = document.createTextNode(robot.email);
+  document.querySelector(`#img${id} .robotName`).appendChild(name);
+  document.querySelector(`#img${id} .robotEamil`).appendChild(email);
+}
+
+function addRobotContent(robot){
+
+}
+robots.forEach(addRobots);
 </script>
   </body>
 </html>

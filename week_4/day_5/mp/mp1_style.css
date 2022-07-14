@@ -1,3 +1,38 @@
 body{
+  background-color: #ee0909bd;
+  box-sizing: border-box;
+  margin: 0%;
   background-image: url(circuit-pattern.png);
+}
+
+#robots{
+  height: 80vh;
+  /* width: 100vw; */
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 5px;
+  justify-content: center;
+  margin-left: 5vw;
+  margin-right: 5vw;
+  margin-top: 10vh;
+}
+
+.robotItem{
+  background-image: url(card-pattern.png);
+  border: solid green 1px;
+  background-color: #03a9f4d6;
+  margin: 5px;
+}
+
+.robotItem *{
+  text-align: center;
+  color: orange;
+}
+
+.robotItem img{
+  width: 80%;
+  background-color: black;
+  margin: 10%;
+  border-radius: 50%;
 }
