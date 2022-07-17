@@ -21,6 +21,9 @@ function func(e){
   let inputsJSON = JSON.stringify(inputsObj);
   console.log(inputsJSON);
   let elm = document.createElement("h1");
+  let text = document.createTextNode(inputsJSON);
+  elm.appendChild(text);
+  document.body.appendChild(elm);
 }
 </script>
   </body>
