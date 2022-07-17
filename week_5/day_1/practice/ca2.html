@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+<script type="text/javascript">
+// ## Exercise 1
+// Write a function called `divide` that takes two parameters: a numerator and a denominator.
+// Your function should return the result of numerator / denominator.
+// However, if denominator is zero you should throw the error, "Attempted to divide by zero."
+function divide(x, y){
+  try{
+    if(y == 0){
+      throw new Error("Attempted to divide by zero")
+    } else{
+      return x / y;
+    }
+  }
+  catch(e){
+    console.log("Can't divide by zero");
+  }
+}
+divide(2,0);
+divide(5,8);
+// ## Exercise 2
+// Using the code below:
+const someVar = 'Cannot be reassigned';
+try {
+  someVar = 'Still going to try';
+} catch(e) {
+  console.log(e);
+}
+console.log("after")
+// 1. Which type of error will be thrown ? Look on the different types errors on Google
+//assigning new value to const
+// 2. Is the console.log("after") will be shown on the console ? YES
+</script>
+  </body>
+</html>

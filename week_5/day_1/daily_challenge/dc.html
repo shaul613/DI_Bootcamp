@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <form class="" action="dc.html" method="">
+      <label for="fname">First Name</label>
+      <input type="text" name="fname" value="">
+      <label for="lname">Last Name</label>
+      <input type="text" name="lname" value="">
+      <button type="submit" name="button">Submit</button>
+    </form>
+<script type="text/javascript">
+document.forms[0].addEventListener("submit", func);
+function func(e){
+  e.preventDefault();
+  let inputs = new FormData(e.target);
+  let inputsObj = Object.fromEntries(inputs.entries());
+  let inputsJSON = JSON.stringify(inputsObj);
+  console.log(inputsJSON);
+  let elm = document.createElement("h1");
+}
+</script>
+  </body>
+</html>
