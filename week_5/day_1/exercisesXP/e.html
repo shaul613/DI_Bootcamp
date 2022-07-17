@@ -11,7 +11,49 @@
       <input type="text" name="Name" value="">
       <label for="comm">Comments</label>
       <textarea name="comm" rows="8" cols="50"></textarea>
-      <button type="button" name="button">Submit</button>
+      <button type="submit" name="button">Submit</button>
+      <!-- Data appears in URL -->
     </form>
+    <!-- Exercise 2 -->
+    <form class="" action="e.html" method="post">
+      <label for="name">Name</label>
+      <input type="text" name="Name" value="">
+      <label for="comm">Comments</label>
+      <textarea name="comm" rows="8" cols="50"></textarea>
+      <button type="submit" name="button">Submit</button>
+      <!-- Something appears in the network tab for a second -->
+    </form>
+    <script type="text/javascript">
+let marioGame = {
+  detail : "An amazing game!",
+  characters : {
+      mario : {
+        description:"Small and jumpy. Likes princesses.",
+        height: 10,
+        weight: 3,
+        speed: 12,
+      },
+      bowser : {
+        description: "Big and green, Hates princesses.",
+        height: 16,
+        weight: 6,
+        speed: 4,
+      },
+      princessPeach : {
+        description: "Beautiful princess.",
+        height: 12,
+        weight: 2,
+        speed: 2,
+      }
+  },
+}
+// Convert this JS object into a JSON object. What happens to the nested objects ?
+let jsonObj = JSON.stringify(marioGame); //It prints messy
+console.log(jsonObj);
+// Convert and pretty print this JS object into a JSON object. Hint : Check out the JSON lesson on the platform.
+jsonObj = JSON.stringify(marioGame, null, 2); //prints nice
+console.log(jsonObj);
+// Use your web inspector to add a breakpoint. Check the values of the JSON object in the debugger.
+    </script>
   </body>
 </html>
