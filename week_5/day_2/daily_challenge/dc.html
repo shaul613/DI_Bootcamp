@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <form id="form" class="" action="index.html" method="post">
+      <input id="search" type="text" name="search" value="" placeholder="start typing">
+      <button type="submit" name="button">Search</button>
+    </form>
+    <div id="gifs" class=""></div>
+<script type="text/javascript">
+// Use this Giphy API documentation. Use the API KEY provided in Exercises XP.
+// In the HTML file, add a form, containing an input and a button. This input is used to fetch gif depending on
+// a specific category.
+// In the JS file, create a program to fetch one random gif depending on the search of the user (ie. If the search
+// is “sun”, append on the page one gif with a category of “sun”).
+// The gif should be appended with a DELETE button next to it. Hint : to find the URL of the gif, look for the s
+// ub-object named “images” inside the data you receive from the API.
+// Allow the user to delete a specific gif by clicking the DELETE button.
+// Allow the user to remove all of the GIFs by clicking a DELETE ALL button.
+document.forms.form.addEventListener("submit", handleSubmit);
+function handleSubmit(e){
+  e.preventDefault()
+  let search = e.target.elements.search.value;
+  let req = new XMLHttpRequest();
+  req.open("GET", `https://api.giphy.com/v1/gifs/search?q=${search}&rating=g&api_key=hpvZycW22qCjn5cRM1xtWB8NKq4dQ2My`);
+  req.responseType = "json";
+  req.send();
+  req.onload = function(){
+    if(search.length == 0){
+      return false;
+    }
+    let imgUrl = req.response.data[0].images.original.url;
+    let imgForm = document.createElement("form");
+    imgForm.setAttribute("class", "imgForm");
+    let img = document.createElement("img");
+    img.setAttribute("src", imgUrl);
+    let deleteBtn = document.createElement("button");
+    let btnText = document.createTextNode("Delete");
+    deleteBtn.appendChild(btnText);
+    deleteBtn.setAttribute("type", "submit")
+    imgForm.appendChild(img);
+    imgForm.appendChild(deleteBtn);
+    document.body.appendChild(imgForm);
+    let images = Array.from(document.getElementsByClassName("imgForm"));
+    images.forEach(item => item.addEventListener("submit", deleteImg));
+    function deleteImg(event){
+      event.preventDefault();
+      event.target.remove();
+    }
+  }
+}
+</script>
+  </body>
+</html>
