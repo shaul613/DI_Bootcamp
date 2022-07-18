@@ -18,12 +18,13 @@ function func(e){
   e.preventDefault();
   let inputs = new FormData(e.target);
   let inputsObj = Object.fromEntries(inputs.entries());
-  let inputsJSON = JSON.stringify(inputsObj);
-  console.log(inputsJSON);
-  let elm = document.createElement("h1");
-  let text = document.createTextNode(inputsJSON);
-  elm.appendChild(text);
-  document.body.appendChild(elm);
+  // let inputsJSON = JSON.stringify(inputsObj);
+  // console.log(inputsJSON);
+  document.write(JSON.stringify(inputsObj));
+  // let elm = document.createElement("h1");
+  // let text = document.createTextNode(inputsJSON);
+  // elm.appendChild(text);
+  // document.body.appendChild(elm);
 }
 </script>
   </body>
