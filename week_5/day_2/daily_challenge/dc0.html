@@ -21,10 +21,11 @@
 // Allow the user to delete a specific gif by clicking the DELETE button.
 // Allow the user to remove all of the GIFs by clicking a DELETE ALL button.
 document.forms.mainform.addEventListener("submit", handleSubmit);
-createDeleteAllBtn(); //creating delete all button
+let clicked = false;
+createDeleteAllBtn();
 let delAllBtn = document.getElementById("delAll");
-delAllBtn.setAttribute("style", "display:none;"); //hiding diplay all button
-function handleSubmit(e){ //Handeling search
+delAllBtn.setAttribute("style", "display:none;");
+function handleSubmit(e){
   e.preventDefault()
   let search = e.target.elements.search.value;
   let req = new XMLHttpRequest();
@@ -32,32 +33,39 @@ function handleSubmit(e){ //Handeling search
   req.responseType = "json";
   req.send();
   req.onload = function(){
-    if(search.length == 0){ //Preventing empty search
+    if(search.length == 0){
       return false;
     }
-    delAllBtn.setAttribute("style", "display: ;"); //displaying delete all button
-    addImage(); //adding image with function
+    delAllBtn.setAttribute("style", "display: ;");
+    let imgUrl = req.response.data[0].images.original.url;
+    let imgForm = document.createElement("form");
+    imgForm.setAttribute("class", "imgForm");
+    let img = document.createElement("img");
+    img.setAttribute("src", imgUrl);
+    let deleteBtn = document.createElement("button");
+    let btnText = document.createTextNode("Delete");
+    deleteBtn.appendChild(btnText);
+    deleteBtn.setAttribute("type", "submit")
+    imgForm.appendChild(img);
+    imgForm.appendChild(deleteBtn);
+    document.body.appendChild(imgForm);
+    let images = Array.from(document.getElementsByClassName("imgForm"));
+    images.forEach(item => item.addEventListener("submit", deleteImg));
+    document.getElementById("delAll").addEventListener("click", delAll);
 
-    let images = Array.from(document.getElementsByClassName("imgForm")); //Array of all img items
-    images.forEach(item => item.addEventListener("submit", deleteImg)); //Deleting image when its button is clicked
-    document.getElementById("delAll").addEventListener("click", delAll); //Deleting all images when delete all is clicked
-    console.log(images); //Logging all images (teting purposes)
-
-    function deleteImg(event){ //handeling delete image
+    function deleteImg(event){
       event.preventDefault();
-      event.target.remove(); //Removing image
-      console.log(images); //Testing
-      console.log(images.length); //Testing
+      // console.log(event.target);
+      event.target.remove();
+      console.log(images.length);
 
-      //I'm still working on this... I want to remove delete button when last image is removed.
-      //Need to read on why images array won't update with DOM.
       if(images.length == 0){
         delAllBtn.setAttribute("style", "display: none;");
       }
     }
+    console.log(images.length);
 
-
-    function delAll(eve){ //Handeling delete all button
+    function delAll(eve){
       eve.preventDefault();
       images.forEach(item => item.remove());
       delAllBtn.setAttribute("style", "display:none;");
@@ -65,24 +73,11 @@ function handleSubmit(e){ //Handeling search
 
 
 
-    function addImage(){ //Handeling adding images
-      let imgUrl = req.response.data[0].images.original.url;
-      let imgForm = document.createElement("form"); //creating form element for image and its button
-      imgForm.setAttribute("class", "imgForm"); //setting class
-      let img = document.createElement("img");
-      img.setAttribute("src", imgUrl);
-      let deleteBtn = document.createElement("button");
-      let btnText = document.createTextNode("Delete");
-      deleteBtn.appendChild(btnText);
-      deleteBtn.setAttribute("type", "submit")
-      imgForm.appendChild(img);
-      imgForm.appendChild(deleteBtn);
-      document.body.appendChild(imgForm);
-    }
+
   }
 }
 
-function createDeleteAllBtn(){ //Creating delete all button
+function createDeleteAllBtn(){
   let delAllBtn = document.createElement("button");
   let dabText = document.createTextNode("Delete All");
   delAllBtn.appendChild(dabText);
