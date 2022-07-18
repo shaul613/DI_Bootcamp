@@ -16,7 +16,10 @@ req.send();
 req.onload = function(){
   let obj = JSON.parse(req.response);
   for(i=0; i<3; i++){
-    console.log(obj[i].name, obj[i].email, obj[i].address.city);
+    let item = {...obj[i]};
+    let address = {...item.address}
+    console.log(item.name, item.email, address.city);
+    // console.log(obj[i].name, obj[i].email, obj[i].address.city);
   }
 }
 req.onprogress = function(){
