@@ -6,7 +6,12 @@
   </head>
   <body>
 <script type="text/javascript">
-
+// - Make an HTTP request using the GET METHOD on this API:
+// https://jsonplaceholder.typicode.com/users
+// - Use the method onload, onprogress, onerror
+// - If there is no error, display on the page the name, email, city of the 3 first users
+let xhr = new XMLHttpRequest();
+xhr.open("GET", "https://jsonplaceholder.typicode.com/users");
 </script>
   </body>
 </html>
