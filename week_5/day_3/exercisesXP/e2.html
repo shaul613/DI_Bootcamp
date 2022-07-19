@@ -7,14 +7,19 @@
   <body>
 <script type="text/javascript">
 // Create a promise that resolves itself in 4 seconds and returns a “success” string.
-// How can you make your promise from part 1 shorter using Promise.resolve() and console.log “success”?
-// Add code to catch errors and console.log ‘Ooops something went wrong’.
-let pro = new Promise((res, rej) => {
+//--------------------------------
+let pro = new Promise((resolve, reject) => {
+  let i = 10; //For error demonsrations purposes
+  // i = 9; //Causes an error
   setTimeout(() => {
-    Promise.resolve("Success");
-  }, 4000);
+    i==10 ? resolve("Success") : reject("No good... i must==10");
+  }, 1000);
 });
-console.log(test);
+pro.then(res => console.log(res)).catch(rej => console.log(`Ooops, something went wrong: ${rej}`))
+//---------------------------------------
+// How can you make your promise from part 1 shorter using Promise.resolve() and console.log “success”?
+Promise.resolve("success").then(res => console.log(res));
+// Add code to catch errors and console.log ‘Ooops something went wrong’.
 </script>
   </body>
 </html>
