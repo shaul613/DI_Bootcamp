@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <div id="root" class="">
+
+    </div>
+  </head>
+  <body>
+<script type="text/javascript">
+// # PART I
+// Use fetch to fetch one 1 random gif with the category of "sun", then
+// append the gif to the page. Use this documentation https://developers.giphy.com/docs/api/endpoint#random
+// https://api.giphy.com/v1/gifs/random?tag=%22sun%22&api_key=hpvZycW22qCjn5cRM1xtWB8NKq4dQ2My
+
+function appGif(par="sun"){
+  fetch(`https://api.giphy.com/v1/gifs/random?tag=%22${par}%22&api_key=hpvZycW22qCjn5cRM1xtWB8NKq4dQ2My`)
+  .then(res => {
+    return res.json();
+  })
+  .then(obj => {
+    url = obj.data.images.original.url;
+    let image = document.createElement("img");
+    image.setAttribute("src", url);
+    let title = document.createElement("h1");
+    let text = document.createTextNode(par);
+    title.appendChild(text);
+    document.getElementById("root").appendChild(image);
+    document.getElementById("root").appendChild(title);
+  })
+}
+// appGif();
+// # Part II
+// Instead of having a fixed category of gif.
+// First, fetch one word from this api :http://random-word-api.herokuapp.com/word?number=1
+// You will then fetch 1 random gif, depending on the word. The word will be the gif category
+// Display the word and the gif on the page
+// For example:
+// you will fetch the random-word-api. This api will return a random word - for example : "happy"
+// Using this word as a category, you will fetch one random gif with the category of "happy"
+// and display it on the page
+function word(){
+  fetch("http://random-word-api.herokuapp.com/word?number=1")
+  .then(res => res.json())
+  .then(res => {
+    console.log(res[0]);
+    appGif(res[0]);
+
+  })
+}
+word();
+// console.log(word());
+// # Part III
+// If the giphy API doesn't find a gif (because the word can be strange) - display a gif that says "404 ERROR"
+
+</script>
+  </body>
+</html>
