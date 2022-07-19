@@ -22,15 +22,21 @@ function func(input){
       typeof input == "string" ? reso(input) : rej(input);
     }, 5000)
   });
-  pro.then(reso => {
-    reso += reso;
-    console.log(reso);
-  }).catch(rej => console.log(rej));
+  // pro.then(reso => {
+  //   reso += reso;
+  //   console.log(reso);
+  // }).catch(rej => console.log(rej));
+  console.log(pro);
+  console.log("hello");
+  return pro;
 }
-func("congratulations")
-func("hello");
-func(73);
-func(true);
+func("congratulations").then((res) => {
+  res += res;
+  console.log(res);
+}).catch(rej => console.log(rej));
+// func("hello");
+// func(73);
+// func(true);
 </script>
   </body>
 </html>
