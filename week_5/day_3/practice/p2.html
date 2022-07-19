@@ -17,6 +17,9 @@
 function appGif(par="sun"){
   fetch(`https://api.giphy.com/v1/gifs/random?tag=%22${par}%22&api_key=hpvZycW22qCjn5cRM1xtWB8NKq4dQ2My`)
   .then(res => {
+    // if(res.status == 404){
+    //   appGif("404 error");
+    // }
     return res.json();
   })
   .then(obj => {
@@ -50,6 +53,7 @@ function word(){
   })
 }
 word();
+appGif("jhuihungy7guimhiaufh78qy8m9qh8yunuhmjimjuhauhjfijjhhghfgf");
 // console.log(word());
 // # Part III
 // If the giphy API doesn't find a gif (because the word can be strange) - display a gif that says "404 ERROR"
