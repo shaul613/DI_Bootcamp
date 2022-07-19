@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+<script type="text/javascript">
+let test = new Promise((resolve, reject) => {
+  let num = 10;
+  let gift = 500;
+  setTimeout(() => {
+    num >= 100 ? resolve(gift) : reject("less than 100");
+  }, 3000)
+});
+console.log(test);
+test.then(a => console.log(test)).catch(rej => console.log(test));
+//
+// console.log(test);
+</script>
+  </body>
+</html>
