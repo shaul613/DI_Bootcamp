@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+<script type="text/javascript">
+// Use Promise.resolve(value) to create a promise that will resolve itself with a value of 3.
+Promise.resolve(3).then(res => console.log(res));
+// Use Promise.reject(error) to create a promise that will reject itself with the string “Boo!”
+Promise.reject("Boo").catch(err => console.log(err)); //Catching error
+Promise.reject("Boo").then(err => console.log(err)); //Not catching error
+</script>
+  </body>
+</html>
