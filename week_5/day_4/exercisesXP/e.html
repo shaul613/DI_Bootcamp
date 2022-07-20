@@ -14,10 +14,9 @@
 async function func(){
   let obj = await fetch("https://www.swapi.tech/api/starships/9/");
   let toJs = await obj.json();
-  return await toJs;
+  console.log(toJs);
 }
-
-console.log(func());
+func();
 </script>
   </body>
 </html>
