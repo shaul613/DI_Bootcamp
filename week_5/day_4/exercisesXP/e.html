@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+<script type="text/javascript">
+//Exercise 1
+// Convert the below promise into async await:
+// fetch("https://www.swapi.tech/api/starships/9/")
+//     .then(response => response.json())
+//     .then(result => console.log(result));
+async function func(){
+  let obj = await fetch("https://www.swapi.tech/api/starships/9/");
+  let toJs = await obj.json();
+  return await toJs;
+}
+
+console.log(func());
+</script>
+  </body>
+</html>
