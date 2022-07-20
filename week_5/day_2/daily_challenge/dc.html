@@ -20,6 +20,7 @@
 // ub-object named “images” inside the data you receive from the API.
 // Allow the user to delete a specific gif by clicking the DELETE button.
 // Allow the user to remove all of the GIFs by clicking a DELETE ALL button.
+let i = 0;
 document.forms.mainform.addEventListener("submit", handleSubmit);
 createDeleteAllBtn(); //creating delete all button
 let delAllBtn = document.getElementById("delAll");
@@ -39,18 +40,22 @@ function handleSubmit(e){ //Handeling search
     addImage(); //adding image with function
 
     let images = Array.from(document.getElementsByClassName("imgForm")); //Array of all img items
-    images.forEach(item => item.addEventListener("submit", deleteImg)); //Deleting image when its button is clicked
+
     document.getElementById("delAll").addEventListener("click", delAll); //Deleting all images when delete all is clicked
     console.log(images); //Logging all images (teting purposes)
 
     function deleteImg(event){ //handeling delete image
+
       event.preventDefault();
       event.target.remove(); //Removing image
+      images = Array.from(document.getElementsByClassName("imgForm"));
+      console.log('hey',event.target);
       console.log(images); //Testing
       console.log(images.length); //Testing
 
       //I'm still working on this... I want to remove delete button when last image is removed.
       //Need to read on why images array won't update with DOM.
+      /*I THINK IT'S RESOLVED!*/
       if(images.length == 0){
         delAllBtn.setAttribute("style", "display: none;");
       }
@@ -68,6 +73,8 @@ function handleSubmit(e){ //Handeling search
     function addImage(){ //Handeling adding images
       let imgUrl = req.response.data[0].images.original.url;
       let imgForm = document.createElement("form"); //creating form element for image and its button
+      imgForm.setAttribute("id", `${i}`);
+      i++;
       imgForm.setAttribute("class", "imgForm"); //setting class
       let img = document.createElement("img");
       img.setAttribute("src", imgUrl);
@@ -78,6 +85,7 @@ function handleSubmit(e){ //Handeling search
       imgForm.appendChild(img);
       imgForm.appendChild(deleteBtn);
       document.body.appendChild(imgForm);
+      imgForm.addEventListener("submit", deleteImg); //Deleting image when its button is clicked
     }
   }
 }

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+<script type="text/javascript">
+async function pro(name){
+  if(name != "jhon"){
+    throw new Error ("You are not jhon");
+  } else{
+      return `hello ${name}`;
+  }
+}
+
+pro("jhon").then(r => console.log(r)).catch(err => console.log(err));
+</script>
+  </body>
+</html>
