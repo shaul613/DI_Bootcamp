@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+<script type="text/javascript">
+// Exercise Game - The word game
+// You need to create 4 functions, each of them return a promises
+// 1. The 1st function, receives 2 famous persons name from the user -
+// if the names are not a string -> reject
+// else - resolve with the name of the 2 ppl
+async function getPeople(){
+  let personOne = prompt("Enter person 1:");
+  let personTwo = prompt("Enter person 2:");
+  if(typeof personOne != "string" || typeof personTwo != "string"){
+    throw new Error("Names must be string");
+  } else{
+    return [personOne, personTwo];
+  }
+}
+// 2. The 2nd function, receives a noun
+// if the noun is less than 3 letters - reject
+// else - resolve with the noun
+async function getnoun(){
+  let input = prompt("Enter a noun!");
+  if(input.length < 3){
+    throw new Error("Less than 3")
+  } else{
+    return input;
+  }
+}
+// 3. The 3rd function, receives a city
+// if the city doesn't start with an uppercase letter -> reject
+// else - resolve with the city name
+async function getcity(){
+  let input = prompt("Enter a city!");
+  if(input[0] != input[0].toUpperCase()){
+    throw new Error("City must start with uppercase");
+  } else{
+    return input;
+  }
+}
+// 4. The 4st function, receives a verb (finishing with "ing")
+//  if it doesn't end with "ing" -> reject (use the endWith string method)
+// else resolve with the verb
+async function getverb(){
+  let input = prompt("Enter a verb!");
+  if(input.endsWith("ing")){
+    return input;
+  } else{
+    throw new Error("Doesn't end with ing")
+  }
+}
+// 5. The last function, is an async function - it receives all the above promises, and return a sentence with it
+// Ex: "Beyonce is playing football with Barack Obama in Paris"
+async function output(){
+  let personArr = await getPeople();
+  let noun = await getnoun();
+  let city = await getcity();
+  let verb = await getverb();
+  let [pOne, pTwo] = personArr;
+  console.log(`${pOne} is ${verb} ${noun} with ${pTwo} in ${city}`);
+  return `${pOne} is ${verb} ${noun} with ${pTwo} in ${city}`;
+}
+console.log(output());
+
+// ---
+// 6. Part II. BONUS
+// Instead of waiting for the promises to come back resolved, look at Promise.all method
+// --> running the promises in Parallel
+// --> check the difference of performance with performance.now()
+</script>
+  </body>
+</html>
