@@ -74,7 +74,7 @@ function toJs(jsonText){
 // if the user entered the word "¡Hola!", the promise rejects because the character "¡" doesn't exist in the morse
 // javascript object
 function toMorse(morseJS){
-  let input = prompt("Enter a word!").split('');
+  let input = prompt("Enter a word!").toLowerCase().split('');
   let keys = Object.keys(morseJS);
   let isValid = input.every(c => keys.includes(c));
   let pro = new Promise((res, rej) => {
