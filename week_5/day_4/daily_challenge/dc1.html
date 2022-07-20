@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <form class="" action="" method="get">
+      <label for="lat1">Latitude 1</label>
+      <input id="lat1" type="text" name="" value="48.864716">
+      <label for="lon1">longitude 1</label>
+      <input id="lon1" type="text" name="" value="2.349014">
+      <label for="lat2">Latitude 2</label>
+      <input id="lat2" type="text" name="" value="40.730610">
+      <label for="lon2">longitude 2</label>
+      <input id="lon2" type="text" name="" value="-73.935242">
+      <button type="submit" name="button">submit</button>
+    </form>
+<script type="text/javascript">
+// Implement a simple version of Promise.all.
+// This function should accept an array of promises and return an array of resolved values.
+// If any of the promises are rejected, the function should catch them.
+//
+// Example
+//
+const promise1 = Promise.resolve(3);
+const promise2 = 42;
+const promise3 = new Promise((resolve, reject) => {
+  setTimeout(resolve, 3000, 'foo');
+});
+
+let pro = Promise.all([promise1, promise2, promise3])
+.then(res => console.log(res))
+.catch(err => console.log(err));
+// // expected output: Array [3, 42, "foo"]
+//---------------------
+
+//Part 2
+//-------------------------
+// You will find the hour of sunrise of two cities, using the API https://sunrise-sunset.org/api.
+// In the HTML file, create a form with 4 inputs:
+// the latitude and longitude of the first city
+// the latitude and longitude of the second city
+// Retrieve the input’s value and display the hour of the sunrise for both city ONLY when both promises are resolved
+// Hint : Use Promise.all()
+// Try with Paris and New York
+// Paris
+// Latitude: 48.864716
+// Longitude: 2.349014
+// New York
+// Latitude: 40.730610
+// Longitude: -73.935242
+let theForm = document.forms[0];
+theForm.addEventListener("submit", handleSubmit);
+
+async function handleSubmit(){
+  event.preventDefault();
+  let lat1 = theForm.lat1.value;
+  let lon1 = theForm.lon1.value;
+  let lat2 = theForm.lat2.value;
+  let lon2 = theForm.lon2.value;
+  let sunrise = await Promise.all([getTimes(lat1, lon1), getTimes(lat2, lon2)]);
+  addToDom(sunrise[0], "Location 1");
+  addToDom(sunrise[1], "Location 2");
+}
+
+async function getTimes(lat, lon){
+  try{
+    let api = await fetch(`https://api.sunrise-sunset.org/json?lat=${lat}&lng=${lon}`);
+    let obj = await api.json();
+    return obj.results.sunrise;
+  } catch(err){
+    console.log(err);
+  }
+}
+
+function addToDom(sunrise, loc){
+  let elm = document.createElement("p");
+  let text = document.createTextNode(`Sunrise for ${loc}: ${sunrise}`);
+  elm.appendChild(text);
+  document.body.appendChild(elm);
+}
+</script>
+  </body>
+</html>
