@@ -11,17 +11,19 @@ function fetchWord () {
 }
 
 function fetchGif (wordrandom) {
-	fetch(`https://api.giphy.com/v1/gifs/random?tag=${wordrandom}&api_key=hpvZycW22qCjn5cRM1xtWB8NKq4dQ2My`) // return a promise with as a result a Response object
+	// fetch(`https://api.giphy.com/v1/gifs/random?tag=${wordrandom}&api_key=hpvZycW22qCjn5cRM1xtWB8NKq4dQ2My`) // return a promise with as a result a Response object
+	fetch(`https://api.giphy.com/v1/gifs/random?tag=kjhuigfhghjhhgfyg&api_key=hpvZycW22qCjn5cRM1xtWB8NKq4dQ2My`)
 	.then(response => {
 		if (response.status !== 200){
-			throw new Error ("404 ERROR")	
+			throw new Error ("404 ERROR")
 		} else {
 			return response.json(); //returns a promise
 		}
 	})
 	.then(result => {
 		console.log(result)
-		if (result["data"] == []){
+		if (false){
+			console.log(result["data"]);
 			throw new Error ("GIF NOT FOUND");
 		} else {
 			let gif = result["data"]["images"]["original"]["url"];
@@ -29,7 +31,7 @@ function fetchGif (wordrandom) {
 			imageGif.setAttribute("src", gif);
 			document.body.appendChild(imageGif)
 		}
-		
+
 	})
 	.catch(error => {
 		let imageGif = document.createElement("img");
