@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="mp1_style.css">
+  </head>
+  <body>
+    <div id="top" class=""></div>
+    <div id="info" class=""></div>
+    <button id="find" type="button" name="button">Find Someone</button>
+  </body>
+<script type="text/javascript">
+document.getElementById("find").addEventListener("click", displayInfo);
+let personNumber = 99; //The purpose of this is to prevent the display of the same character twicw in a row
+function getNum(){
+  let num;
+  do{
+    num = Math.floor(Math.random() * 84); //Getting rundom number from 0 to 83
+  } while(num == personNumber)
+  personNumber = num; //personNumber is == to previous number or 99 for first time
+  return num;
+}
+async function displayInfo(){
+  addLoading();
+  let num = getNum();
+  try{
+    let person = await getPerson(num); //Fething API
+    addToDom(person); //Adding info to DOM
+  }catch(err){
+    console.log(err); //Logging error
+    errText(); //Displaying error text
+  }
+}
+
+async function getPerson(num){ //This functions returns an array of specific information about the given charactor
+  let result = await fetch(`https://www.swapi.tech/api/people/${num}`); //Fetching person
+  let obj = await result.json();
+  let person = obj.result.properties; //Getting object of peoperties
+
+  let hwRes = await fetch(obj.result.properties.homeworld); //Fetching homeworld
+  let getHomeWorld = await hwRes.json();
+  let hw = getHomeWorld.result.properties.name;
+
+  let objArr = [person.name, person.height, person.gender, person.birth_year, hw]; //Adding props to array
+  return objArr;
+}
+
+function addToDom(arr){ //This function ads the charactor information to the page
+  let root = document.getElementById("info"); //Div to append to
+  removeInfoElements(); //Removing any previous elements
+  let prop = ['', 'Height: ', 'Gender: ', 'Birth Year: ', 'Homeworld: ']; //Array to property names
+  for(i=0; i<5; i++){ //Adding info
+    let elm;
+    i==0 ? elm = document.createElement("h1") : elm = document.createElement("h3");
+    let text = document.createTextNode(`${prop[i]}${arr[i]}`);
+    elm.appendChild(text);
+    root.appendChild(elm);
+  }
+}
+
+function errText(){ //Error text
+  removeInfoElements();
+  let elm = document.createElement("h1");
+  let text = document.createTextNode("Sorry... Something isn't right");
+  elm.appendChild(text);
+  document.getElementById("info").appendChild(elm);
+}
+
+function addLoading(){ //This function adds loading element
+  removeInfoElements();
+  let elm = document.createElement("h1");
+  let text = document.createTextNode("Loading...");
+  elm.appendChild(text);
+  document.getElementById("info").appendChild(elm);
+}
+
+function removeInfoElements(){ //This function is for removing all previous elements in #info
+  let info = document.querySelectorAll("#info *");
+  for(i=0; i<info.length; i++){ //Removing previous charactor, if any
+    info[i].remove();
+  }
+}
+</script>
+</html>
