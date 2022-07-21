@@ -1,4 +1,5 @@
 body{
+  /* Note: I took the background from the demo source code. */
   background-image: url("https://i.giphy.com/media/TxVVB6PfWMjE4/200.webp");
   text-align: center;
   box-sizing: border-box;
