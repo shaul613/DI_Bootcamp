@@ -1,5 +1,8 @@
 -- 1. Select everything from the table. (every row and columns) - How many records does the table have?
+SELECT * FROM city_info;
+SELECT count(*) FROM city_info; --4711
 -- 2. What was Bostons temperature on the 01/03/2015 at 11am ?
+SELECT temperature FROM city_info WHERE city LIKE 'Boston';
 -- 3. When (ie. days and hours) was the temperature between 28 and 30 degrees in San Francisco ?
 -- 4. Which city was the most noisy (show the name of the city, the date and the noise index)? - Don't use the
 -- MAX function
