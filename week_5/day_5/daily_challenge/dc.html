@@ -44,8 +44,8 @@ async function getCodes(){ //Getting codes from API
 async function fillOptions(){ //Function for filling select boxes
   let codes = await getCodes();
   let selectBoxes = document.getElementsByClassName("select");
-  for(i=0; i< selectBoxes.length; i++){
-    for(c in codes){ //Creatign an option element for each currency
+  for(let i=0; i< selectBoxes.length; i++){
+    for(let c in codes){ //Creatign an option element for each currency
       let elm = document.createElement("option");
       let text = document.createTextNode(`${codes[c][0]} - ${codes[c][1]}`); //The text should be the name of currency which is the second index, i.e. index[1]
       elm.appendChild(text);
